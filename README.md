@@ -31,7 +31,7 @@ und dann im Browser `http://localhost:8000` öffnen. Alternative in VS Code: die
 | Was | Wo |
 |---|---|
 | Texte (Slogan, Leistungen, Ablauf, Über uns …) | `index.html`. Jede Sektion ist mit einem Kommentar wie `<!-- 2. LEISTUNGEN -->` markiert |
-| Akzentfarbe, Hintergrund, Schriftfarben | `css/style.css`, ganz oben im Block `:root`. Für Rot z. B. `--accent: #e5242b;` und `--accent-soft: rgba(229, 36, 43, 0.14);` |
+| Akzentfarbe, Hintergrund, Schriftfarben | `css/style.css`, ganz oben im Block `:root`. Für eine andere Akzentfarbe `--accent` und `--accent-rgb` (dieselbe Farbe als RGB-Werte) ändern |
 | Schriftarten | Google-Fonts-Link im `<head>` von `index.html` und `--font-display` / `--font-body` in `:root` |
 | Hero-Video | Datei als `assets/videos/hero.mp4` ablegen. Ohne Datei läuft automatisch ein animierter Farbverlauf |
 | Portfolio-Videos | In `index.html` beim jeweiligen `<button class="work" …>` das Attribut `data-video` füllen: `assets/videos/projekt-1.mp4` **oder** ein YouTube-/Vimeo-Link |
