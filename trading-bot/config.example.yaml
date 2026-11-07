@@ -1,0 +1,43 @@
+# Kopieren nach config.yaml und anpassen.
+
+# "demo" = verweigert jeden Start auf einem Echtgeld-Konto.
+# "live" = erlaubt Echtgeld, aber NUR zusätzlich mit CONFIRM_LIVE_TRADING in .env.
+mode: demo
+
+symbol: XAUUSD          # Bei manchen Brokern "GOLD" oder "XAUUSD.m"
+timeframe: H1           # M15, M30, H1, H4, D1
+
+# Kontraktdaten Gold (Standard bei den meisten MT5-Brokern).
+# Im Live-Betrieb werden sie automatisch vom Broker gelesen.
+instrument:
+  contract_size: 100    # 1 Lot = 100 Unzen
+  lot_step: 0.01
+  min_lot: 0.01
+  max_lot: 1.0
+  spread: 0.30          # in USD pro Unze, für den Backtest
+  commission_per_lot: 7.0   # USD pro Lot, Hin- und Rückweg zusammen
+
+risk:
+  risk_per_trade_pct: 1.0     # Max. Verlust pro Trade in % vom Konto
+  max_daily_loss_pct: 3.0     # Danach keine neuen Trades mehr an diesem Tag
+  max_drawdown_pct: 15.0      # Not-Aus: Bot stoppt komplett
+  max_trades_per_day: 4
+
+# Aktive Strategie für den Live-/Demo-Betrieb.
+# Wird nach "optimize" mit den besten Parametern befüllt.
+strategy:
+  name: ema_trend
+  params:
+    fast: 20
+    slow: 100
+    atr_period: 14
+    sl_atr: 2.0
+    tp_atr: 3.0
+
+backtest:
+  initial_balance: 2000
+
+walk_forward:
+  train_bars: 3000      # ca. 6 Monate H1
+  test_bars: 1000       # ca. 2 Monate H1
+  min_trades: 15        # Parameter mit weniger Trades im Training werden ignoriert

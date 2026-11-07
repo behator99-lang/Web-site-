@@ -50,3 +50,7 @@ Das Formular prüft die Eingaben, verschickt aber noch **nichts** (Demo). Für e
 - Testimonials sind erfundene Beispieltexte und als solche markiert. Durch echte Stimmen ersetzen oder entfernen.
 - Impressum und Datenschutz mit echten, rechtlich geprüften Angaben füllen.
 - Google Fonts für die DSGVO am besten lokal einbinden.
+
+## Weitere Projekte
+
+- `trading-bot/` – Gold-Trading-Bot für MetaTrader 5 (eigene Anleitung in `trading-bot/README.md`)
